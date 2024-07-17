@@ -79,15 +79,32 @@ img{
 }
 /*Navegacion*/
 .barra{
-    display: block;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    align-items: center;
+    padding-top: 2rem;
 }
 @media (min-width: 768px){
     .barra{
         display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: space-between;
     }
+}
+.mobile-menu{
+    display: block;
+    width: 3rem;
+    margin-top: 1.5rem;
+}
+@media (min-width: 768px){
+    .mobile-menu{
+        display: none;
+    }
+}
+.mobile-menu:hover{
+    cursor: pointer;
 }
 .logo__enlace{
     color: var(--blanco);
@@ -98,12 +115,28 @@ img{
 .logo__bold{
     font-weight: bold;
 }
+
+.navegacion{
+    visibility: hidden;
+    opacity: 0;
+    height: 2rem;
+    transition: visibility .9s ease-in-out, opacity .5s linear, height .5s linear ;
+}
 @media (min-width: 768px){
     .navegacion{
+        visibility: visible;
+        opacity: 1;
         display: flex;
         gap: 2rem;
+        height: 5.5rem;
     }
 }
+.mostrar{
+    visibility: visible;
+    opacity: 1;
+    height: 12rem;
+}
+
 .navegacion__enlace{
     display: block;
     text-align: center;
@@ -119,6 +152,7 @@ img{
     font-size: 1.8rem;
     color: white;
 }
+
 /*Contenido*/
 @media (min-width: 768px){
     .contenido-principal{
